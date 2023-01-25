@@ -7,7 +7,7 @@ console.clear();
 
 const socketClient = new SocketClient();
 
-socketClient.connect(3000, () => {
+socketClient.connect('localhost', 3000, () => {
   console.log('Server connected!');
 });
 

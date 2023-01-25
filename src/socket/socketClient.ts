@@ -11,10 +11,10 @@ export default class SocketClient {
   private socket: Socket | null = null;
   private events: HashTable<FunctionEvent> = {};
 
-  public connect(port: number, callback: Callback): void {
+  public connect(host: string, port: number, callback: Callback): void {
     this.socket = new Socket();
     this.setupSocket();
-    this.socket.connect(port, callback);
+    this.socket.connect({host, port}, callback);
   }
 
   public ready(callback: Callback): void {
